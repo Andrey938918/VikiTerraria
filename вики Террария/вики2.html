@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вики по Terraria</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background-color: #111;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #66ccff;
+            text-decoration: none;
+        }
+        input, textarea, button {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+        }
+        section {
+            margin: 2rem;
+            padding: 1rem;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+        }
+        img {
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Terraria Wiki</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Об игре</a></li>
+                <li><a href="#bosses">Боссы</a></li>
+                <li><a href="#weapons">Оружие</a></li>
+                <li><a href="#armor">Броня</a></li>
+                <li><a href="#crafting">Крафты</a></li>
+                <li><a href="#npcs">NPC</a></li>
+                <li><a href="#add-article">Добавить статью</a></li>
+                <li><a href="#login">Вход</a> | <a href="#register">Регистрация</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="searchInput" placeholder="Поиск по сайту...">
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Об игре Terraria</h2>
+            <img src="https://images.steamusercontent.com/ugc/1817772271474421595/6F70BF199DA8E08CDC2CD3FF327F6C67B9518F91/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true" alt="Terraria Overview" style="max-width:100%">
+            <p>Terraria — это инди-песочница, разработанная Re-Logic. Игра представляет собой двухмерный мир, где игроки могут исследовать, строить, сражаться и выживать. Содержит множество биомов, врагов, NPC и предметов.</p>
+        </section>
+
+        <section id="bosses">
+            <h2>Боссы</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=6d2f250d937c511a9dcfe99282ed5964_l-5288850-images-thumbs&n=13" alt="Bosses" style="max-width:100%">
+            <ul>
+                <li>Глаз Ктулху</li>
+                <li>Пожиратель миров</li>
+                <li>Скелетрон</li>
+                <li>Стена плоти</li>
+                <li>Плантера</li>
+                <li>Голем</li>
+                <li>Лунный лорд</li>
+            </ul>
+        </section>
+
+        <section id="weapons">
+            <h2>Оружие</h2>
+            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1836/67ce5b7e7ad30c91009aa92c1121b64ae64031c3-1535991799_lrg.png" alt="Weapons" style="max-width:100%">
+            <ul>
+                <li>Night's Edge</li>
+                <li>Razorblade Typhoon</li>
+                <li>Megashark</li>
+            </ul>
+        </section>
+
+        <section id="armor">
+            <h2>Броня</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=99f89de052ee1164e57c626c1252ed5e_l-7012253-images-thumbs&n=13" alt="Armor" style="max-width:100%">
+            <ul>
+                <li>Медная броня</li>
+                <li>Теневая броня</li>
+                <li>Хлорофитовая броня</li>
+                <li>Небесная броня</li>
+            </ul>
+        </section>
+
+        <section id="crafting">
+            <h2>Крафты</h2>
+            <img src="https://images.steamusercontent.com/ugc/2502387268057123592/DC14AD2401E60053D5C0517EE5F5B1CFB49A8F49/?imw=512&amp;imh=300&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true" alt="Crafting" style="max-width:100%">
+            <ul>
+                <li>Верстак</li>
+                <li>Печь</li>
+                <li>Наковальня</li>
+                <li>Алтарь крафта</li>
+            </ul>
+        </section>
+
+        <section id="npcs">
+            <h2>NPC</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=4a5e5c4defaea70e65268e350ff9b52f_l-5339388-images-thumbs&n=13" alt="NPCs" style="max-width:100%">
+            <ul>
+                <li>Торговец</li>
+                <li>Медсестра</li>
+                <li>Демолитор</li>
+                <li>Волшебник</li>
+                <li>Парикмахер</li>
+            </ul>
+        </section>
+
+        <section id="add-article">
+            <h2>Добавить статью</h2>
+            <form id="articleForm">
+                <input type="text" name="title" placeholder="Заголовок" required><br>
+                <textarea name="content" placeholder="Текст статьи" required></textarea><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+
+    <footer>
+        <p>&copy; 2025 Terraria Wiki | Все права защищены.</p>
+    </footer>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const query = this.value.toLowerCase();
+            document.querySelectorAll('main section').forEach(section => {
+                section.style.display = section.textContent.toLowerCase().includes(query) ? '' : 'none';
+            });
+        });
+
+        document.getElementById('articleForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Статья отправлена на модерацию.');
+        });
+
+
+    </script>
+</body>
+</html>
